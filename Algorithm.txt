@@ -1,0 +1,19 @@
+1. Make pins connected to driver IC as output.
+	Make pins RD0 & RD1 for Left Motor as output.
+	Make pins RD2 & RD2 for Right Motor as output.
+2. Output zeros to all pins connected to driver IC (RD0, RD1, RD2 & RD3) to turn off both left & right motors initially.
+3. Initialize UART module at 9600 baud rate & wait for UART module to stabilize.
+4. If UART module is ready, read the received data.
+5. If received data is not 'S', go to Step 4.
+6. If UART module is ready, read the received data.
+7. If received data is not 'X', store the received data in an array and go to Step 6.
+8. Access element in the array.
+9. If the element is 'f', turn on pins corresponding to forward motion for a predetermined time and go to Step 17. 
+10. If the element is 'r', turn on pins corresponding to left motion for a predetermined time and go to Step 17. 
+11. If the element is 'l', turn on pins corresponding to right motion for a predetermined time and go to Step 17. 
+12. If the element is 'a', turn on pins corresponding to reverse motion for a predetermined time and go to Step 17. 
+13. If the element is 'b', turn on pins corresponding to 45 degree right motion for a predetermined time and go to Step 17. 
+14. If the element is 'c', turn on pins corresponding to 135 degree right motion for a predetermined time and go to Step 17.  
+15. If the element is 'b', turn on pins corresponding to 45 degree left motion for a predetermined time and go to Step 17. 
+16. If the element is 'c', turn on pins corresponding to 135 degree left motion for a predetermined time and go to Step 17. 
+17. If all elements are accessed go to Step 4 else go to Step 8. 
